@@ -43,4 +43,4 @@ jobs:
           USER: ${{ secrets.USER }}
           KEY: ${{ secrets.KEY }}
         run: |
-          ssh user@your-server "cd /path/to/your/app && git pull && mvn clean install && java -jar target/calculator.jar"
+          ssh git@github.com:Zhidkov-Aleksandr/Calculator.git "cd /path/to/your/app && git pull && mvn clean install && java -jar target/calculator.jar"
