@@ -29,18 +29,3 @@ jobs:
 
       - name: Run tests
         run: mvn test
-        
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Deploy
-        env:
-          HOST: ${{ secrets.HOST }}
-          USER: ${{ secrets.USER }}
-          KEY: ${{ secrets.KEY }}
-        run: |
-          ssh git@github.com:Zhidkov-Aleksandr/Calculator.git "cd /path/to/your/app && git pull && mvn clean install && java -jar target/calculator.jar"
